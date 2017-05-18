@@ -1,0 +1,11 @@
+javac OOMETest.java
+java -Xms256m -XX:OnOutOfMemoryError='./oome.sh' -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp OOMETest
+java.lang.OutOfMemoryError: Requested array size exceeds VM limit
+Dumping heap to /tmp/java_pid30020.hprof ...
+Heap dump file created [1899746 bytes in 0.014 secs]
+#
+# java.lang.OutOfMemoryError: Requested array size exceeds VM limit
+# -XX:OnOutOfMemoryError="./oome.sh"
+# Executing /bin/sh -c "./oome.sh"...
+Exception in thread "main" java.lang.OutOfMemoryError: Requested array size exceeds VM limit
+ at OOMETest.main(OOMETest.java:6)
